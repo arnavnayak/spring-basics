@@ -1,18 +1,5 @@
 package com.practice.spring.basics.springbasics;
 
-<<<<<<< HEAD
-import com.practice.spring.basics.springbasics.basic.BinarySearchImprovedAgainSetterInjection;
-import com.practice.spring.basics.springbasics.scope.PersonDAO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-@ComponentScan
-=======
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -26,18 +13,13 @@ import com.practice.spring.basics.springbasics.basic.BinarySearchImprovedAgainSe
 import com.practice.spring.basics.springbasics.scope.PersonDAO;
 
 @SpringBootApplication
->>>>>>> 2b69b1d01ac85f3ee2d503cb39b726ef5b3fe070
 public class SpringBasicsScopeApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringBasicsScopeApplication.class);
 	
 	public static void main(String[] args) {
 		
-<<<<<<< HEAD
-		ConfigurableApplicationContext springApplicationContext = new AnnotationConfigApplicationContext(SpringBasicsScopeApplication.class);
-=======
 		ConfigurableApplicationContext springApplicationContext = SpringApplication.run(SpringBasicsScopeApplication.class, args);
->>>>>>> 2b69b1d01ac85f3ee2d503cb39b726ef5b3fe070
 		
 		
 		BinarySearchImprovedAgainSetterInjection bSearchSettInjected = springApplicationContext.getBean(BinarySearchImprovedAgainSetterInjection.class);
@@ -60,11 +42,7 @@ public class SpringBasicsScopeApplication {
 		LOGGER.info("{}",pDaoBean.getJdbcConnection());
 		LOGGER.info("{}",pDaoBean1);
 		LOGGER.info("{}",pDaoBean1.getJdbcConnection());
-<<<<<<< HEAD
-
-=======
 		
->>>>>>> 2b69b1d01ac85f3ee2d503cb39b726ef5b3fe070
 		/** when we use prortype as ascope we in persdao we get the following output:--
 		 *  com.practice.spring.basics.springbasics.scope.PersonDAO@55322aab
 			com.practice.spring.basics.springbasics.scope.JdbcConnection@50468873
