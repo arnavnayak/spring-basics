@@ -17,12 +17,12 @@ public class SpringBasicsComponentScanApplication {
 	
 	public static void main(String[] args) {
 
-		AnnotationConfigApplicationContext springApplicationContext = new AnnotationConfigApplicationContext(SpringBasicsComponentScanApplication.class);
+		try(AnnotationConfigApplicationContext springApplicationContext = new AnnotationConfigApplicationContext(SpringBasicsComponentScanApplication.class);
+		) {
+			ComponentDAO cDaoBean = springApplicationContext.getBean(ComponentDAO.class);
 
-		ComponentDAO cDaoBean = springApplicationContext.getBean(ComponentDAO.class);
-
-		LOGGER.info("{}",cDaoBean);
-
+			LOGGER.info("{}", cDaoBean);
+		}
 			}
 
 }

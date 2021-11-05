@@ -15,11 +15,12 @@ public class SpringBasicsCdiApplication {
 	
 	public static void main(String[] args) {
 
-		AnnotationConfigApplicationContext springApplicationContext = new AnnotationConfigApplicationContext(SpringBasicsCdiApplication.class);
+		try(AnnotationConfigApplicationContext springApplicationContext = new AnnotationConfigApplicationContext(SpringBasicsCdiApplication.class);
+		) {
+			SomeCdiBusiness someCdiBusiness = springApplicationContext.getBean(SomeCdiBusiness.class);
 
-		SomeCdiBusiness someCdiBusiness = springApplicationContext.getBean(SomeCdiBusiness.class);
-
-		LOGGER.info("{} -DAO {}",someCdiBusiness,someCdiBusiness.getSomeCdiDao());
+			LOGGER.info("{} -DAO {}", someCdiBusiness, someCdiBusiness.getSomeCdiDao());
+		}
 	}
 
 }
