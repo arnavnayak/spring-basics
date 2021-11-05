@@ -8,8 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@Configuration
-@ComponentScan
+
 public class SpringBasicsXMLApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(SpringBasicsXMLApplication.class);
@@ -24,7 +23,7 @@ public class SpringBasicsXMLApplication {
 			XmlPersonDAO xmlPersonDAOBean =  springXMlApplicationContext.getBean(XmlPersonDAO.class);
 
 			XmlJdbcConnection result = xmlPersonDAOBean.getXmlJdbcConnection();
-		
+			LOGGER.info("{}",xmlPersonDAOBean);
 		LOGGER.info("{}",result);
 		 
 
