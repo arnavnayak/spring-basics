@@ -19,12 +19,13 @@ public class SpringBasicsXMLApplication {
 					= new ClassPathXmlApplicationContext("applicationContext.xml")
 		){
 
+			LOGGER.info("beans loaded are : {} ",(Object)springXMlApplicationContext.getBeanDefinitionNames());
 
 			XmlPersonDAO xmlPersonDAOBean =  springXMlApplicationContext.getBean(XmlPersonDAO.class);
 
 			XmlJdbcConnection result = xmlPersonDAOBean.getXmlJdbcConnection();
-			LOGGER.info("{}",xmlPersonDAOBean);
-		LOGGER.info("{}",result);
+
+			LOGGER.info("{} {}",xmlPersonDAOBean,result);
 		 
 
 		}
